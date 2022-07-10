@@ -19,6 +19,8 @@ public class BoardTest {
     List<List<String>> expected = List.of(List.of("", "", ""), List.of("", "", ""), List.of("", "", ""));
 
     assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
   }
 
   @Test
@@ -30,7 +32,10 @@ public class BoardTest {
 
     play(board, new Position(0, 0));
 
-    assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.current())
+        .isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
   }
 
   @Test
@@ -42,7 +47,10 @@ public class BoardTest {
 
     play(board, new Position(0, 0), new Position(0, 1));
 
-    assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.current())
+        .isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
   }
 
   @Test
@@ -54,7 +62,10 @@ public class BoardTest {
 
     play(board, new Position(0, 0), new Position(0, 1), new Position(1, 0));
 
-    assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.current())
+        .isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
   }
 
   @Test
@@ -66,7 +77,10 @@ public class BoardTest {
 
     play(board, new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(2, 2));
 
-    assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.current())
+        .isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
   }
 
   @Test
@@ -84,8 +98,10 @@ public class BoardTest {
         new Position(1, 2), new Position(2, 0),
         new Position(2, 2));
 
-    assertThat(board.current()).isEqualTo(expected);
-    assertThat(board.result()).isEqualTo(Result.DRAW);
+    assertThat(board.current())
+        .isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.DRAW);
   }
 
   @ParameterizedTest

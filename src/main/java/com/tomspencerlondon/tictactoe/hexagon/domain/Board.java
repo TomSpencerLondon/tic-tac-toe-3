@@ -81,8 +81,11 @@ public class Board {
       return Result.PLAYER_WINS;
     } else if (isComputerWinner()) {
       return Result.COMPUTER_WINS;
+    } else if (!freeSquare()) {
+      return Result.DRAW;
     }
-    return Result.DRAW;
+
+    return Result.GAME_ON;
   }
 
   private boolean isComputerWinner() {
