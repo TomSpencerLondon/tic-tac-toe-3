@@ -28,7 +28,7 @@ public class BoardTest {
 
     List<List<String>> expected = List.of(List.of("X", "", ""), List.of("", "O", ""), List.of("", "", ""));
 
-    board.play(new Position(0, 0));
+    play(board, new Position(0, 0));
 
     assertThat(board.current()).isEqualTo(expected);
   }
@@ -40,8 +40,7 @@ public class BoardTest {
 
     List<List<String>> expected = List.of(List.of("X", "X", ""), List.of("", "O", ""), List.of("", "O", ""));
 
-    board.play(new Position(0, 0));
-    board.play(new Position(0, 1));
+    play(board, new Position(0, 0), new Position(0, 1));
 
     assertThat(board.current()).isEqualTo(expected);
   }
@@ -53,9 +52,7 @@ public class BoardTest {
 
     List<List<String>> expected = List.of(List.of("X", "X", ""), List.of("X", "O", ""), List.of("O", "O", ""));
 
-    board.play(new Position(0, 0));
-    board.play(new Position(0, 1));
-    board.play(new Position(1, 0));
+    play(board, new Position(0, 0), new Position(0, 1), new Position(1, 0));
 
     assertThat(board.current()).isEqualTo(expected);
   }
@@ -67,10 +64,7 @@ public class BoardTest {
 
     List<List<String>> expected = List.of(List.of("X", "X", ""), List.of("X", "O", "O"), List.of("O", "O", "X"));
 
-    board.play(new Position(0, 0));
-    board.play(new Position(0, 1));
-    board.play(new Position(1, 0));
-    board.play(new Position(2, 2));
+    play(board, new Position(0, 0), new Position(0, 1), new Position(1, 0), new Position(2, 2));
 
     assertThat(board.current()).isEqualTo(expected);
   }
@@ -85,11 +79,10 @@ public class BoardTest {
         List.of("O", "X", "X"),
         List.of("X", "O", "X"));
 
-    board.play(new Position(0, 1));
-    board.play(new Position(1, 1));
-    board.play(new Position(1, 2));
-    board.play(new Position(2, 0));
-    board.play(new Position(2, 2));
+    play(board,
+        new Position(0, 1), new Position(1, 1),
+        new Position(1, 2), new Position(2, 0),
+        new Position(2, 2));
 
     assertThat(board.current()).isEqualTo(expected);
     assertThat(board.result()).isEqualTo(Result.DRAW);
