@@ -80,7 +80,13 @@ public class Board {
   public Result result() {
     if (isPlayerWinner()) {
       return Result.PLAYER_WINS;
+    } else if (isComputerWinner()) {
+      return Result.COMPUTER_WINS;
     }
     return Result.DRAW;
+  }
+
+  private boolean isComputerWinner() {
+    return isRowWin("O") || isColumnWin("O") || isDiagonalWin("O");
   }
 }
