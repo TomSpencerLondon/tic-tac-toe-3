@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Board {
 
-  private List<List<String>> current;
-  private Computer computer;
+  private final List<List<String>> current;
+  private final Computer computer;
 
   public Board(Computer computer) {
     this.computer = computer;
