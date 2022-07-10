@@ -39,15 +39,16 @@ public class BoardTest {
 
   @Test
   void givenBoardWithTwoSquaresPlayResultsInFourFilled() {
-    Computer stubComputer = new StubComputer(new Position(1, 1));
+    Computer stubComputer = new StubComputer(new Position(1, 1), new Position(2, 1));
     Board board = new Board(stubComputer);
 
     List<List<String>> expected = List.of(
-        List.of("X", "", ""),
+        List.of("X", "X", ""),
         List.of("", "O", ""),
-        List.of("", "", ""));
+        List.of("", "O", ""));
 
     board.play(new Position(0, 0));
+    board.play(new Position(0, 1));
 
     assertThat(board.current())
         .isEqualTo(expected);
