@@ -11,10 +11,7 @@ public class Board {
 
   public Board(Computer computer) {
     this.computer = computer;
-    current = asList(
-        asList("", "", ""),
-        asList("", "", ""),
-        asList("", "", ""));
+    current = asList(asList("", "", ""), asList("", "", ""), asList("", "", ""));
   }
 
   public List<List<String>> current() {
@@ -23,7 +20,25 @@ public class Board {
 
   public void play(Position position) {
     current.get(position.x()).set(position.y(), "X");
+    if (freeSquare()) {
+      computerPlay();
+    }
+  }
+
+  private void computerPlay() {
     Position computerPosition = computer.nextPosition();
     current.get(computerPosition.x()).set(computerPosition.y(), "O");
+  }
+
+  private boolean freeSquare() {
+    for (List<String> line : current) {
+      for (String square : line) {
+        if (square.isEmpty()) {
+          return true;
+        }
+      }
+    }
+
+    return false;
   }
 }

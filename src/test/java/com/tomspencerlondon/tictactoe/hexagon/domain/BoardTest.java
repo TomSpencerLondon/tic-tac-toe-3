@@ -38,7 +38,7 @@ public class BoardTest {
   }
 
   @Test
-  void givenBoardWithTwoSquaresPlayResultsInFourFilled() {
+  void twoPlaysResultsInFourFilled() {
     Computer stubComputer = new StubComputer(new Position(1, 1), new Position(2, 1));
     Board board = new Board(stubComputer);
 
@@ -49,6 +49,77 @@ public class BoardTest {
 
     board.play(new Position(0, 0));
     board.play(new Position(0, 1));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+  }
+
+  @Test
+  void threePlaysResultsInSixFilled() {
+    Computer stubComputer = new StubComputer(
+        new Position(1, 1),
+        new Position(2, 1),
+        new Position(2, 0)
+        );
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("X", "X", ""),
+        List.of("X", "O", ""),
+        List.of("O", "O", ""));
+
+    board.play(new Position(0, 0));
+    board.play(new Position(0, 1));
+    board.play(new Position(1, 0));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+  }
+
+  @Test
+  void fourPlaysResultsInEightFilled() {
+    Computer stubComputer = new StubComputer(
+        new Position(1, 1),
+        new Position(2, 1),
+        new Position(2, 0),
+        new Position(1, 2)
+    );
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("X", "X", ""),
+        List.of("X", "O", "O"),
+        List.of("O", "O", "X"));
+
+    board.play(new Position(0, 0));
+    board.play(new Position(0, 1));
+    board.play(new Position(1, 0));
+    board.play(new Position(2, 2));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+  }
+
+  @Test
+  void fivePlaysResultsInFullBoard() {
+    Computer stubComputer = new StubComputer(
+        new Position(1, 1),
+        new Position(2, 1),
+        new Position(2, 0),
+        new Position(1, 2)
+    );
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("X", "X", "X"),
+        List.of("X", "O", "O"),
+        List.of("O", "O", "X"));
+
+    board.play(new Position(0, 0));
+    board.play(new Position(0, 1));
+    board.play(new Position(1, 0));
+    board.play(new Position(2, 2));
+    board.play(new Position(0, 2));
 
     assertThat(board.current())
         .isEqualTo(expected);
