@@ -2,6 +2,7 @@ package com.tomspencerlondon.tictactoe.hexagon.domain;
 
 import static java.util.Arrays.asList;
 
+import java.util.Collection;
 import java.util.List;
 
 public class Board {
@@ -31,14 +32,8 @@ public class Board {
   }
 
   private boolean freeSquare() {
-    for (List<String> line : current) {
-      for (String square : line) {
-        if (square.isEmpty()) {
-          return true;
-        }
-      }
-    }
-
-    return false;
+    return current.stream()
+        .flatMap(Collection::stream)
+        .anyMatch(String::isEmpty);
   }
 }
