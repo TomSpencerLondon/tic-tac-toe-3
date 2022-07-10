@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+  <link rel="stylesheet"
+        th:href="@{/css/tailwind.css}"
+        href="../../../../target/classes/static/css/tailwind.css"
+  >
+</head>
+<body>
+<main class="pt-8 text-center">
+  <h1 class="mb-8 text-3xl font-bold uppercase">Tic Tac Toe</h1>
+  <form class="grid grid-cols-3 mx-auto w-64 border-black border-solid border-2" th:action="@{/game}"
+        method="post"
+  >
+    <th:block th:each="line, iter : *{game.board}">
+      <th:block th:each = "square, iterInner : ${line}">
+        <button class="h-24 border-solid border-2 border-black text-center flex justify-center align-middle cursor-pointer"
+                type="submit" name="square" th:value="${iter.index} + '_' + ${iterInner.index}">
+          <span class="font-extrabold flex items-center self-center text-3xl"></span>
+        </button>
+      </th:block>
+    </th:block>
+  </form>
+</main>
+</body>
+</html>
