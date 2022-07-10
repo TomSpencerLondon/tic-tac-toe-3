@@ -104,6 +104,21 @@ public class BoardTest {
         .isEqualTo(Result.DRAW);
   }
 
+  @Test
+  void givenRestartBoardIsEmpty() {
+    Computer stubComputer = new StubComputer(new Position(1, 1));
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(List.of("", "", ""), List.of("", "", ""), List.of("", "", ""));
+
+    play(board, new Position(0, 0));
+    board.restart();
+
+    assertThat(board.current()).isEqualTo(expected);
+    assertThat(board.result())
+        .isEqualTo(Result.GAME_ON);
+  }
+
   @ParameterizedTest
   @MethodSource("argumentsForPlayerWins")
   void playerWins(Computer stubComputer, List<List<String>> expectedBoard, Position[] positions, Result result) {

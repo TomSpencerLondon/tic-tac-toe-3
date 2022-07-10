@@ -1,10 +1,12 @@
 package com.tomspencerlondon.tictactoe.hexagon.domain;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.fill;
 import static java.util.Map.entry;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
@@ -90,5 +92,9 @@ public class Board {
 
   private boolean isComputerWinner() {
     return isRowWin("O") || isColumnWin("O") || isDiagonalWin("O");
+  }
+
+  public void restart() {
+    current.forEach(line -> fill(line, ""));
   }
 }

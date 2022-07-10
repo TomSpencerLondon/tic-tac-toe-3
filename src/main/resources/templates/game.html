@@ -14,15 +14,38 @@
   <form class="grid grid-cols-3 mx-auto w-64 border-black border-solid border-2" th:action="@{/game}"
         method="post"
   >
-    <th:block th:each="line, iter : *{game.board}">
-      <th:block th:each = "square, iterInner : ${line}">
-        <button class="h-24 border-solid border-2 border-black text-center flex justify-center align-middle cursor-pointer"
-                type="submit" name="square" th:value="${iter.index} + '_' + ${iterInner.index}">
-          <span class="font-extrabold flex items-center self-center text-3xl"></span>
-        </button>
+    <th:block th:switch="${game.gameOn}">
+      <th:block th:case="${true}">
+        <th:block th:each="line, iter : *{game.board}">
+          <th:block th:each="square, iterInner : ${line}">
+            <th:block th:if="${square == ''}">
+              <button
+                  class="h-24 border-solid border-2 border-black text-center flex justify-center align-middle cursor-pointer"
+                  type="submit" name="square" th:value="${iter.index} + '_' + ${iterInner.index}">
+              </button>
+            </th:block>
+            <th:block th:unless="${square == ''}">
+              <div class="h-24 border-solid border-2 border-black text-center flex justify-center align-middle cursor-pointer">
+                <span class="font-extrabold flex items-center self-center text-3xl" th:text="${square}">
+                </span>
+              </div>
+            </th:block>
+          </th:block>
+        </th:block>
+      </th:block>
+      <th:block th:case="*">
+        <th:block th:each="line, iter : *{game.board}">
+          <th:block th:each="square, iterInner : ${line}">
+            <div class="h-24 border-solid border-2 border-black text-center flex justify-center align-middle cursor-pointer">
+              <span class="font-extrabold flex items-center self-center text-3xl" th:text="${square}">
+              </span>
+            </div>
+          </th:block>
+        </th:block>
       </th:block>
     </th:block>
   </form>
+  <h2 class="mt-8 text-3xl font-bold uppercase" th:text="${game.result}"></h2>
 </main>
 </body>
 </html>
