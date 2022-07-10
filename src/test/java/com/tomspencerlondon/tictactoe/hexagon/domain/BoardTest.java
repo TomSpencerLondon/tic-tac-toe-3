@@ -23,7 +23,23 @@ public class BoardTest {
 
   @Test
   void boardAfterPlayHasTwoSquaresFilled() {
-    Computer stubComputer = new StubComputer();
+    Computer stubComputer = new StubComputer(new Position(1, 1));
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("X", "", ""),
+        List.of("", "O", ""),
+        List.of("", "", ""));
+
+    board.play(new Position(0, 0));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+  }
+
+  @Test
+  void givenBoardWithTwoSquaresPlayResultsInFourFilled() {
+    Computer stubComputer = new StubComputer(new Position(1, 1));
     Board board = new Board(stubComputer);
 
     List<List<String>> expected = List.of(
