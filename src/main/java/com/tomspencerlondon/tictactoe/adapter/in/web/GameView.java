@@ -51,4 +51,32 @@ public class GameView {
   public boolean isGameOn() {
     return gameOn;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    GameView gameView = (GameView) o;
+
+    if (gameOn != gameView.gameOn) {
+      return false;
+    }
+    if (!board.equals(gameView.board)) {
+      return false;
+    }
+    return result.equals(gameView.result);
+  }
+
+  @Override
+  public int hashCode() {
+    int result1 = board.hashCode();
+    result1 = 31 * result1 + result.hashCode();
+    result1 = 31 * result1 + (gameOn ? 1 : 0);
+    return result1;
+  }
 }

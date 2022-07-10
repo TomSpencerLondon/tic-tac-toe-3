@@ -23,4 +23,8 @@ public class GameService {
     Position position = new Position(values.get(0), values.get(1));
     board.play(position);
   }
+
+  public void restart() {
+    board.restart();
+  }
 }

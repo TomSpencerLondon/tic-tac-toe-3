@@ -31,4 +31,10 @@ public class GameController {
     gameService.play(square);
     return "redirect:/";
   }
+
+  @PostMapping("/restart")
+  public String restart() {
+    gameService.restart();
+    return "redirect:/";
+  }
 }

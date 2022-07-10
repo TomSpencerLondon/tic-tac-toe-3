@@ -46,6 +46,16 @@
     </th:block>
   </form>
   <h2 class="mt-8 text-3xl font-bold uppercase" th:text="${game.result}"></h2>
+  <div class="text-center mt-8">
+    <form action="#" th:action="@{/restart}" th:method="post"
+          class="w-full">
+      <button type="submit"
+              id="start"
+              class="ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+        New Game
+      </button>
+    </form>
+  </div>
 </main>
 </body>
 </html>
