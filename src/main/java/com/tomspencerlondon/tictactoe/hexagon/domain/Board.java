@@ -1,6 +1,7 @@
 package com.tomspencerlondon.tictactoe.hexagon.domain;
 
 import static java.util.Arrays.asList;
+import static java.util.Map.entry;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,7 +32,13 @@ public class Board {
   }
 
   private boolean isPlayerWinner() {
-    return isRowWin("X") || isColumnWin("X");
+    return isRowWin("X") || isColumnWin("X") || isDiagonalWin("X");
+  }
+
+  private boolean isDiagonalWin(String player) {
+    List<String> playerWins = List.of(player, player, player);
+    return List.of(current.get(0).get(0), current.get(1).get(1), current.get(2).get(2)).equals(playerWins)
+        || List.of(current.get(0).get(2), current.get(1).get(1), current.get(2).get(0)).equals(playerWins);
   }
 
   private boolean isRowWin(String player) {
@@ -46,10 +53,11 @@ public class Board {
   }
 
   private Map<Integer, List<String>> columns() {
-    Map<Integer, List<String>> columns = new HashMap<>();
-    columns.put(0, new ArrayList<>());
-    columns.put(1, new ArrayList<>());
-    columns.put(2, new ArrayList<>());
+    Map<Integer, List<String>> columns = Map.ofEntries(
+        entry(0, new ArrayList<>()),
+        entry(1, new ArrayList<>()),
+        entry(2, new ArrayList<>())
+    );
 
     current.forEach(line -> {
       IntStream.range(0, 3).forEachOrdered(i -> {

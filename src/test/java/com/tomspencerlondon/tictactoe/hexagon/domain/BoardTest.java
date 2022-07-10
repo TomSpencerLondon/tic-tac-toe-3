@@ -289,4 +289,52 @@ public class BoardTest {
     assertThat(board.result())
         .isEqualTo(Result.PLAYER_WINS);
   }
+
+  @Test
+  void playerWinsDiagonalTopLeftToBottomRight() {
+    Computer stubComputer = new StubComputer(
+        new Position(0, 2),
+        new Position(1, 0)
+    );
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("X", "", "O"),
+        List.of("O", "X", ""),
+        List.of("", "", "X"));
+
+    board.play(new Position(0, 0));
+    board.play(new Position(1, 1));
+    board.play(new Position(2, 2));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+
+    assertThat(board.result())
+        .isEqualTo(Result.PLAYER_WINS);
+  }
+
+  @Test
+  void playerWinsDiagonalTopRightToBottomLeft() {
+    Computer stubComputer = new StubComputer(
+        new Position(0, 0),
+        new Position(1, 0)
+    );
+    Board board = new Board(stubComputer);
+
+    List<List<String>> expected = List.of(
+        List.of("O", "", "X"),
+        List.of("O", "X", ""),
+        List.of("X", "", ""));
+
+    board.play(new Position(0, 2));
+    board.play(new Position(1, 1));
+    board.play(new Position(2, 0));
+
+    assertThat(board.current())
+        .isEqualTo(expected);
+
+    assertThat(board.result())
+        .isEqualTo(Result.PLAYER_WINS);
+  }
 }
