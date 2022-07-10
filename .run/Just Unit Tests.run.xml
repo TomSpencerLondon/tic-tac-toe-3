@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Just Unit Tests" type="JUnit" factoryName="JUnit">
+    <module name="tic-tac-toe-3" />
+    <option name="PACKAGE_NAME" value="com.tomspencerlondon.tictactoe.hexagon.domain" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="tags" />
+    <tag value="!integration &amp; !architecture" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
