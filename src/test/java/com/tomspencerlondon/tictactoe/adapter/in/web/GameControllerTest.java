@@ -64,4 +64,29 @@ class GameControllerTest {
     assertThat(gameView.getResult())
         .isEqualTo("Game On!");
   }
+
+  @Test
+  void givenPlayGameRestartReturnsEmptyBoard() {
+    Board board = new Board(new StubComputer(new Position(0, 1)));
+    GameService gameService = new GameService(board);
+
+    GameController controller = new GameController(gameService);
+
+    Model model = new ConcurrentModel();
+    controller.game(model);
+    controller.playGame("0_0");
+    controller.restart();
+
+    GameView gameView = (GameView) model.getAttribute("game");
+    assertThat(gameView.isGameOn())
+        .isTrue();
+    assertThat(gameView.getBoard().get(0))
+        .containsExactly("", "", "");
+    assertThat(gameView.getBoard().get(1))
+        .containsExactly("", "", "");
+    assertThat(gameView.getBoard().get(2))
+        .containsExactly("", "", "");
+    assertThat(gameView.getResult())
+        .isEqualTo("Game On!");
+  }
 }
