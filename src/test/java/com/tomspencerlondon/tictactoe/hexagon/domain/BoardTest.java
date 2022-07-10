@@ -209,8 +209,8 @@ public class BoardTest {
 
 
   private void play(Board board, Position... positions) {
-    board.play(positions[0]);
-    board.play(positions[1]);
-    board.play(positions[2]);
+    for (Position position : positions) {
+      board.play(position);
+    }
   }
 }
