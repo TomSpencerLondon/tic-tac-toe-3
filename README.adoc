@@ -2,17 +2,16 @@
 Practice with Hexagonal architecture and OOP for Tic Tac Toe game.
 
 === Activity Diagram
-plantuml::docs/diagrams/activityDiagram.puml[]
+image::https://user-images.githubusercontent.com/27693622/178200405-fc176a25-9334-4917-aecf-06c51d3eb744.png[]
 
 === CRC Diagram
-plantuml::docs/diagrams/crcDiagram.puml[]
+image::https://user-images.githubusercontent.com/27693622/178200451-53729db8-f48e-4450-be63-2ea72d48960c.png[]
 
 == Class Diagram
-plantuml::docs/diagrams/classDiagram.puml[]
-
+image::https://user-images.githubusercontent.com/27693622/178200435-600df504-9386-4a18-89b0-4c656b48bcdc.png[]
 
 == Sequence Diagram
-plantuml::docs/diagrams/sequenceDiagram.puml[]
+image::https://user-images.githubusercontent.com/27693622/178200461-1a112947-d5ef-4083-80e4-138381003191.png[]
 
 == Test coverage - https://pitest.org/faq[pitest]
 image::https://user-images.githubusercontent.com/27693622/178199508-4d1878ea-dea2-4b5c-93c2-1a592e78f1c0.png[]
