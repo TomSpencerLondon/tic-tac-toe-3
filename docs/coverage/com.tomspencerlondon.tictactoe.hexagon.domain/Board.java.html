@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Board.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.tomspencerlondon.tictactoe.hexagon.domain;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static java.util.Arrays.asList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static java.util.Collections.fill;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static java.util.Map.entry;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Collection;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Collections;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Map;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.stream.IntStream;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Board {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private final List&#60;List&#60;String&#62;&#62; current;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private final Computer computer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  public Board(Computer computer) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    this.computer = computer;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    current = asList(asList(&#34;&#34;, &#34;&#34;, &#34;&#34;), asList(&#34;&#34;, &#34;&#34;, &#34;&#34;), asList(&#34;&#34;, &#34;&#34;, &#34;&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public List&#60;List&#60;String&#62;&#62; current() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_25'/>
+25
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_25'>1</a>
+<span>
+1. current : replaced return value with Collections.emptyList for com/tomspencerlondon/tictactoe/hexagon/domain/Board::current &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return current;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public void play(Position position) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    current.get(position.x()).set(position.y(), &#34;X&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_30'>2</a>
+<span>
+1. play : negated conditional &rarr; KILLED<br/>
+2. play : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    if (freeSquare() &#38;&#38; !isPlayerWinner()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_31'/>
+31
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_31'>1</a>
+<span>
+1. play : removed call to com/tomspencerlondon/tictactoe/hexagon/domain/Board::computerPlay &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      computerPlay();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean isPlayerWinner() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_36'>4</a>
+<span>
+1. isPlayerWinner : negated conditional &rarr; KILLED<br/>
+2. isPlayerWinner : negated conditional &rarr; KILLED<br/>
+3. isPlayerWinner : negated conditional &rarr; KILLED<br/>
+4. isPlayerWinner : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isPlayerWinner &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return isRowWin(&#34;X&#34;) || isColumnWin(&#34;X&#34;) || isDiagonalWin(&#34;X&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean isDiagonalWin(String player) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    List&#60;String&#62; playerWins = List.of(player, player, player);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_41'>2</a>
+<span>
+1. isDiagonalWin : negated conditional &rarr; KILLED<br/>
+2. isDiagonalWin : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isDiagonalWin &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return List.of(current.get(0).get(0), current.get(1).get(1), current.get(2).get(2)).equals(playerWins)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_42'>1</a>
+<span>
+1. isDiagonalWin : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        || List.of(current.get(0).get(2), current.get(1).get(1), current.get(2).get(0)).equals(playerWins);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean isRowWin(String player) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_46'>2</a>
+<span>
+1. isRowWin : replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isRowWin &rarr; KILLED<br/>
+2. isRowWin : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isRowWin &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return current.contains(List.of(player, player, player));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean isColumnWin(String player) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_50'>2</a>
+<span>
+1. isColumnWin : replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isColumnWin &rarr; KILLED<br/>
+2. isColumnWin : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isColumnWin &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return columns()</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        .values()</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        .stream()</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_53'>2</a>
+<span>
+1. lambda$isColumnWin$0 : replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::lambda$isColumnWin$0 &rarr; KILLED<br/>
+2. lambda$isColumnWin$0 : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::lambda$isColumnWin$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        .anyMatch(c -&#62; c.equals(List.of(player, player, player)));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private Map&#60;Integer, List&#60;String&#62;&#62; columns() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    Map&#60;Integer, List&#60;String&#62;&#62; columns = Map.ofEntries(</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        entry(0, new ArrayList&#60;&#62;()),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        entry(1, new ArrayList&#60;&#62;()),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        entry(2, new ArrayList&#60;&#62;())</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    );</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_63'/>
+63
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_63'>1</a>
+<span>
+1. columns : removed call to java/util/List::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    current.forEach(line -&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_64'/>
+64
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_64'>1</a>
+<span>
+1. lambda$columns$2 : removed call to java/util/stream/IntStream::forEachOrdered &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      IntStream.range(0, 3).forEachOrdered(i -&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        columns.get(i).add(line.get(i));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      });</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    });</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_69'/>
+69
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_69'>1</a>
+<span>
+1. columns : replaced return value with Collections.emptyMap for com/tomspencerlondon/tictactoe/hexagon/domain/Board::columns &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return columns;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private void computerPlay() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    Position computerPosition = computer.nextPosition(current);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    current.get(computerPosition.x()).set(computerPosition.y(), &#34;O&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean freeSquare() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_78'>2</a>
+<span>
+1. freeSquare : replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::freeSquare &rarr; KILLED<br/>
+2. freeSquare : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::freeSquare &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return current.stream().flatMap(Collection::stream).anyMatch(String::isEmpty);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public Result result() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_82'>1</a>
+<span>
+1. result : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    if (isPlayerWinner()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_83'>1</a>
+<span>
+1. result : replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      return Result.PLAYER_WINS;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_84'>1</a>
+<span>
+1. result : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    } else if (isComputerWinner()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_85'>1</a>
+<span>
+1. result : replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      return Result.COMPUTER_WINS;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_86'>1</a>
+<span>
+1. result : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    } else if (!freeSquare()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_87'/>
+87
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_87'>1</a>
+<span>
+1. result : replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      return Result.DRAW;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_90'/>
+90
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_90'>1</a>
+<span>
+1. result : replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return Result.GAME_ON;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private boolean isComputerWinner() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_94'/>
+94
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_94'>4</a>
+<span>
+1. isComputerWinner : negated conditional &rarr; KILLED<br/>
+2. isComputerWinner : negated conditional &rarr; KILLED<br/>
+3. isComputerWinner : negated conditional &rarr; KILLED<br/>
+4. isComputerWinner : replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isComputerWinner &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return isRowWin(&#34;O&#34;) || isColumnWin(&#34;O&#34;) || isDiagonalWin(&#34;O&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public void restart() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_98'>2</a>
+<span>
+1. lambda$restart$3 : removed call to java/util/Collections::fill &rarr; KILLED<br/>
+2. restart : removed call to java/util/List::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    current.forEach(line -&#62; fill(line, &#34;&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7bc6935c_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_25'>25</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_25'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>current<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced return value with Collections.emptyList for com/tomspencerlondon/tictactoe/hexagon/domain/Board::current &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>play<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:twoPlaysResultsInFourFilled()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>play<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:twoPlaysResultsInFourFilled()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_31'>31</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_31'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>play<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:twoPlaysResultsInFourFilled()]</span></span> removed call to com/tomspencerlondon/tictactoe/hexagon/domain/Board::computerPlay &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isPlayerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isPlayerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isPlayerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isPlayerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isPlayerWinner &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isDiagonalWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isDiagonalWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isDiagonalWin &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isDiagonalWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isRowWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#3]</span></span> replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isRowWin &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isRowWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isRowWin &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isColumnWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4]</span></span> replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isColumnWin &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isColumnWin<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isColumnWin &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$isColumnWin$0<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4]</span></span> replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::lambda$isColumnWin$0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$isColumnWin$0<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::lambda$isColumnWin$0 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_63'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>columns<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4]</span></span> removed call to java/util/List::forEach &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_64'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$columns$2<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4]</span></span> removed call to java/util/stream/IntStream::forEachOrdered &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_69'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>columns<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4]</span></span> replaced return value with Collections.emptyMap for com/tomspencerlondon/tictactoe/hexagon/domain/Board::columns &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>freeSquare<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with false for com/tomspencerlondon/tictactoe/hexagon/domain/Board::freeSquare &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>freeSquare<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:fullBoardWithoutWinnerResultsInDraw()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::freeSquare &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#3]</span></span> replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#2]</span></span> replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_87'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:fullBoardWithoutWinnerResultsInDraw()]</span></span> replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_90'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>result<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced return value with null for com/tomspencerlondon/tictactoe/hexagon/domain/Board::result &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_94'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isComputerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isComputerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isComputerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isComputerWinner<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()]</span></span> replaced boolean return with true for com/tomspencerlondon/tictactoe/hexagon/domain/Board::isComputerWinner &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7bc6935c_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7bc6935c_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$restart$3<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:givenRestartBoardIsEmpty()]</span></span> removed call to java/util/Collections::fill &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>restart<br/><b>Killed by : </b>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:givenRestartBoardIsEmpty()]</span></span> removed call to java/util/List::forEach &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#5] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#6] (5 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#3] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#7] (4 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest]/[method:postGameEndpointExists()] (14 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#8] (5 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:givenLeftToRightDiagonalComputerWins()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:twoPlaysResultsInFourFilled()] (2 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#1] (5 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:computerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#2] (4 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:givenPlayGameBoardHasTwoSquares()] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:boardAfterPlayHasTwoSquaresFilled()] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:fourPlaysResultsInEightFilled()] (4 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:fullBoardWithoutWinnerResultsInDraw()] (9 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest]/[method:postRestartEndpointExists()] (14 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:newBoardIsEmpty()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:givenPlayGameRestartReturnsEmptyBoard()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#8] (4 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:givenHorizontalLinePlayerWins()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#7] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#6] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#5] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#4] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#3] (3 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#2] (4 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.web.GameControllerWebMvcTest]/[method:getGameEndpointExists()] (25 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[test-template:playerWins(com.tomspencerlondon.tictactoe.hexagon.domain.Computer, java.util.List, %5BLcom.tomspencerlondon.tictactoe.hexagon.domain.Position;, com.tomspencerlondon.tictactoe.hexagon.domain.Result)]/[test-template-invocation:#1] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:givenRestartBoardIsEmpty()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:threePlaysResultsInSixFilled()] (3 ms)</li><li>com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.adapter.in.web.GameControllerTest]/[method:newGameReturnsEmptyBoard()] (4 ms)</li><li>com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest.[engine:junit-jupiter]/[class:com.tomspencerlondon.tictactoe.hexagon.domain.BoardTest]/[method:fullBoardWithoutWinnerResultsInDraw()] (3 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.7.3
+
+</body>
+</html>
