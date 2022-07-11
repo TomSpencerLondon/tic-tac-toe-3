@@ -1,6 +1,8 @@
 == Tic Tac Toe
 Practice with Hexagonal architecture and OOP for Tic Tac Toe game.
 
+image::https://media.giphy.com/media/PlaCMKpsMH6JbhBykH/giphy.gif[]
+
 === Activity Diagram
 image::https://user-images.githubusercontent.com/27693622/178200405-fc176a25-9334-4917-aecf-06c51d3eb744.png[]
 
@@ -16,3 +18,11 @@ image::https://user-images.githubusercontent.com/27693622/178200461-1a112947-d5e
 == Test coverage - https://pitest.org/faq[pitest]
 image::https://user-images.githubusercontent.com/27693622/178199508-4d1878ea-dea2-4b5c-93c2-1a592e78f1c0.png[]
 https://htmlpreview.github.io/?https://github.com/TomSpencerLondon/tic-tac-toe-3/blob/main/docs/coverage/index.html[view reports]
+
+== Tailwind
+Uses CSS 3.x with the platform-specific command-line tool (CLI).
+Install tailwind cli at https://tailwindcss.com/blog/standalone-cli#get-started.
+This is the command to run the app with tailwind:
+```
+tailwindcss -i ./src/main/resources/static/base.css -o ./src/main/resources/static/tailwind.css --watch
+```
