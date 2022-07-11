@@ -1,0 +1,19 @@
+== Tic Tac Toe
+Practice with Hexagonal architecture and OOP for Tic Tac Toe game.
+
+=== Activity Diagram
+plantuml::docs/diagrams/activityDiagram.puml[]
+
+=== CRC Diagram
+plantuml::docs/diagrams/crcDiagram.puml[]
+
+== Class Diagram
+plantuml::docs/diagrams/classDiagram.puml[]
+
+
+== Sequence Diagram
+plantuml::docs/diagrams/sequenceDiagram.puml[]
+
+== Test coverage - https://pitest.org/faq[pitest]
+image::https://user-images.githubusercontent.com/27693622/175924939-265713dd-180e-4f57-9f72-8c62948ddfc9.png[]
+https://htmlpreview.github.io/?https://github.com/TomSpencerLondon/TicTacToe3/blob/main/docs/coverage/index.html[view reports]

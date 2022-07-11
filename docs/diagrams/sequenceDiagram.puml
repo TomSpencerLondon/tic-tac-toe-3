@@ -1,0 +1,60 @@
+@startuml
+title Ask Question
+
+actor Player as player
+box "Inbound Adapter" #lightblue
+control GameController  as ctrl
+entity GameView as view
+endbox
+box "Application" #orange
+participant GameService as service
+endbox
+
+box "Domain" #lightyellow
+entity Board as board
+entity Position as position
+entity Computer as computer
+endbox
+
+player -> ctrl : game : GET "/"
+ctrl -> service : board
+ctrl <-- service
+ctrl -> view : from
+view -> board : current
+view <-- board
+view -> board : result
+board -> board : freeSquare
+view <-- board
+view -> view : resultDisplayFrom
+ctrl <-- view
+
+player -> ctrl : playGame : POST "/game"
+ctrl -> service : play
+service -> position : <<create>>
+service <-- position
+service -> board : play
+board -> position : x
+board <-- position
+board -> position : y
+board <-- position
+board -> board : freeSquare
+board -> board : computerPlay
+board -> computer : nextPosition
+computer -> position : <<create>>
+computer <-- position
+board <-- computer
+board -> position : x
+board <-- position
+board -> position : y
+board <-- position
+service <-- board
+ctrl <-- service
+player <-- ctrl : game: GET "/"
+
+player -> ctrl : restart: POST "/restart"
+ctrl -> service : restart
+board -> board : restart
+service <-- board
+ctrl <-- service
+player <-- ctrl : game : GET "/"
+@enduml

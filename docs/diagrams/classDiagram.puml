@@ -1,0 +1,46 @@
+@startuml
+title Relationships - Class Diagram
+
+namespace BoardAggregate {
+    class Board {
+      - Computer computer
+      - List<List<String>> current
+      + void play(Position position)
+      + List<List<String>> current()
+    }
+
+    class Computer {
+      - Random random
+      + Position nextPosition(List<List<String>> current)
+    }
+
+    class Position {
+      - int x
+      - int y
+      + int x()
+      + int y()
+    }
+
+    enum Result {
+      - PLAYER_WINS
+      - COMPUTER_WINS
+      - GAME_ON
+      - DRAW
+    }
+
+    Board --down--> Computer : <<uses>>
+    Board -down-> Position : <<uses>>
+    Board -down-> Result : <<creates>>
+}
+
+namespace ApplicationLayer {
+  class GameService {
+    - Board
+    + void play(String square)
+    + void restart()
+  }
+
+  GameService -left-> BoardAggregate.Board :  <<uses>>
+}
+
+@enduml

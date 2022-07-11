@@ -1,0 +1,24 @@
+@startuml
+map Board <<Entity>> {
+  **Responsibilities** => **Collaborators**
+  Knows //how to play// position => <U+0020>Position,\n Computer
+  Knows //how to find// current board => List<List<String>> current
+  Knows //how to find// result => Result
+}
+
+map Position <<Value Object>> {
+  **Responsibilities** => **Collaborators**
+    Knows position => <U+0020>int x,\n int y
+}
+
+map Computer <<Entity>> {
+    **Responsibilities** => **Collaborators**
+    Knows //how to get// next position => <U+0020>Board,\n Random,\n Position
+}
+
+map Result <<Value Object>> {
+    **Responsibilities** => **Collaborators**
+    Knows result => <U+0020>PLAYER_WINS,\n COMPUTER_WINS,\n GAME_ON,\n DRAW
+}
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+start
+repeat
+  :play square;
+  :computer plays square;
+repeat while (Game is over?) is (no)
+->yes;
+:restart game;
+stop
+@enduml

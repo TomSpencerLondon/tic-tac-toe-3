@@ -33,4 +33,10 @@ public class GameControllerWebMvcTest {
     mockMvc.perform(post("/game?square=0_0"))
         .andExpect(status().is3xxRedirection());
   }
+
+  @Test
+  void postRestartEndpointExists() throws Exception {
+    mockMvc.perform(post("/restart"))
+        .andExpect(status().is3xxRedirection());
+  }
 }
