@@ -15,5 +15,5 @@ plantuml::docs/diagrams/classDiagram.puml[]
 plantuml::docs/diagrams/sequenceDiagram.puml[]
 
 == Test coverage - https://pitest.org/faq[pitest]
-image::https://user-images.githubusercontent.com/27693622/175924939-265713dd-180e-4f57-9f72-8c62948ddfc9.png[]
-https://htmlpreview.github.io/?https://github.com/TomSpencerLondon/TicTacToe3/blob/main/docs/coverage/index.html[view reports]
+image::https://user-images.githubusercontent.com/27693622/178199508-4d1878ea-dea2-4b5c-93c2-1a592e78f1c0.png[]
+https://htmlpreview.github.io/?https://github.com/TomSpencerLondon/tic-tac-toe-3/blob/main/docs/coverage/index.html[view reports]
